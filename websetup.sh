@@ -42,3 +42,7 @@ echo"Remove temporary files"
 ech"#####################################"
 rm -rf /tmp/webfiles
 echo
+
+sudo systemctl status httpd
+
+ls /var/www/html/
