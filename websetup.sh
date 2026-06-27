@@ -1,24 +1,24 @@
 #!/bin/bash
 
 # install dependencies
-ech"#####################################"
-echo "install packages."
-echo"####################################"
+echo "#####################################"
+echo "Install packages"
+echo "#####################################"
 sudo dnf install wget unzip httpd -y > /dev/null
 echo
 
 # start and enabled service
-ech"#####################################"
-echo"Start & enables HTTPD services"
-ech"#####################################"
+echo "#####################################"
+echo "Start & enable HTTPD services"
+echo "#####################################"
 sudo systemctl start httpd
 sudo systemctl enable httpd
 echo
 
 # Creating temp directory
-ech"#####################################"
-echo"Starting Artifact Deployment"
-ech"#####################################"
+echo "#####################################"
+echo "Starting Artifact Deployment"
+echo "#####################################"
 mkdir -p /tmp/webfiles
 cd /tmp/webfiles/
 echo
@@ -30,16 +30,16 @@ sudo cp -r 2160_exhibit_studio/* /var/www/html/
 echo
 
 # Bounce service
-ech"#####################################"
-echo"Restarting HTTPD Services"
-ech"#####################################"
+echo "#####################################"
+echo "Restarting HTTPD Services"
+echo "#####################################"
 sudo systemctl restart httpd
 echo
 
 # clean up
-ech"#####################################"
-echo"Remove temporary files"
-ech"#####################################"
+echo "#####################################"
+echo "Remove temporary files"
+echo "#####################################"
 rm -rf /tmp/webfiles
 echo
 
